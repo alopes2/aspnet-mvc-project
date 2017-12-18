@@ -217,6 +217,10 @@
     <Compile Include="Migrations\201712182135023_ApplyFluentApiToCustomerName.Designer.cs">
       <DependentUpon>201712182135023_ApplyFluentApiToCustomerName.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712182157592_AddNameToMembershipType.cs" />
+    <Compile Include="Migrations\201712182157592_AddNameToMembershipType.Designer.cs">
+      <DependentUpon>201712182157592_AddNameToMembershipType.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -323,6 +327,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712182135023_ApplyFluentApiToCustomerName.resx">
       <DependentUpon>201712182135023_ApplyFluentApiToCustomerName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712182157592_AddNameToMembershipType.resx">
+      <DependentUpon>201712182157592_AddNameToMembershipType.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
