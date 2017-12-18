@@ -229,9 +229,14 @@
     <Compile Include="Migrations\201712182206480_AddBirthdateToCustomer.Designer.cs">
       <DependentUpon>201712182206480_AddBirthdateToCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712182231061_CreateTableMovies.cs" />
+    <Compile Include="Migrations\201712182231061_CreateTableMovies.Designer.cs">
+      <DependentUpon>201712182231061_CreateTableMovies.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MembershipType.cs" />
@@ -344,6 +349,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712182206480_AddBirthdateToCustomer.resx">
       <DependentUpon>201712182206480_AddBirthdateToCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712182231061_CreateTableMovies.resx">
+      <DependentUpon>201712182231061_CreateTableMovies.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

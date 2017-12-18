@@ -22,6 +22,7 @@ namespace Vidly.Models
     {
         
         public DbSet<Customer> Customers { get; set; }
+        public DbSet<Movie> Movies { get; set; }
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
@@ -37,6 +38,11 @@ namespace Vidly.Models
         {
             modelBuilder.Entity<Customer>()
                 .Property(c => c.Name)
+                .IsRequired()
+                .HasMaxLength(255);
+            
+            modelBuilder.Entity<Movie>()
+                .Property(m => m.Name)
                 .IsRequired()
                 .HasMaxLength(255);
 
