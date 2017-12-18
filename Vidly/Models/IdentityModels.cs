@@ -32,5 +32,15 @@ namespace Vidly.Models
         {
             return new ApplicationDbContext();
         }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Customer>()
+                .Property(c => c.Name)
+                .IsRequired()
+                .HasMaxLength(255);
+
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }
