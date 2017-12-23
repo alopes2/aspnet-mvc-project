@@ -64,6 +64,11 @@ namespace Vidly.Models
 
     public class RegisterViewModel
     {
+
+        [Required]
+        [Display(Name = "Driving License")]
+        public string DrivingLicense { get; set; }
+
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
@@ -79,6 +84,7 @@ namespace Vidly.Models
         [Display(Name = "Confirmar Senha")]
         [Compare("Password", ErrorMessage = "A senha e a senha de confirmação não correspondem.")]
         public string ConfirmPassword { get; set; }
+
     }
 
     public class ResetPasswordViewModel
