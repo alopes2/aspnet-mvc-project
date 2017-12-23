@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.Globalization;
 
 namespace Vidly.Models
 {
@@ -8,6 +10,15 @@ namespace Vidly.Models
         [Required]
         [Display(Name = "Email")]
         public string Email { get; set; }
+
+        [Required]
+        [Display(Name = "Driving License")]
+        public string DrivingLicense { get; set; }
+
+        [Required]
+        [StringLength(50)]
+        [DataType(DataType.PhoneNumber)]
+        public string Phone { get; set; }
     }
 
     public class ExternalLoginListViewModel
@@ -68,6 +79,11 @@ namespace Vidly.Models
         [Required]
         [Display(Name = "Driving License")]
         public string DrivingLicense { get; set; }
+
+        [Required]
+        [StringLength(50)]
+        [DataType(DataType.PhoneNumber)]
+        public string Phone { get; set; }
 
         [Required]
         [EmailAddress]
