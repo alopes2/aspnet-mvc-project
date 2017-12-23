@@ -1,10 +1,11 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Data.Entity;
-using Vidly.Models;
+ using Microsoft.Owin.Security.Provider;
+ using Vidly.Models;
 using Vidly.ViewModel;
 
 namespace Vidly.Controllers
@@ -53,6 +54,7 @@ namespace Vidly.Controllers
             return Content(year + "/" + month);
         }
 
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult Edit(int id)
         {
             var movie = _context.Movies.SingleOrDefault(m => m.Id == id);
@@ -74,11 +76,14 @@ namespace Vidly.Controllers
             //var movies = _context.Movies
             //        .Include(m => m.Genre)
             //        .ToList();
+            if (User.IsInRole(RoleName.CanManageMovies))
+                return View("List");
 
-            return View();
+            return View("ReadOnlyList");
         }
 
         //movies/New
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult New()
         {
             var genres = _context.Genres.ToList();
@@ -92,6 +97,7 @@ namespace Vidly.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult Save(Movie movie)
         {
             if (!ModelState.IsValid)
